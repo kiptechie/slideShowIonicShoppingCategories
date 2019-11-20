@@ -1,5 +1,7 @@
 {
   "name": "slideShowIonicShoppingCategories",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
