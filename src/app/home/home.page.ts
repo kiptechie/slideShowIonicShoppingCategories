@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-home',
@@ -18,11 +19,16 @@ export class HomePage implements OnInit {
     centeredSlides: true
   };
 
-  constructor(private router: Router, private cartService: CartService) { }
+  constructor(private router: Router, private cartService: CartService, private statusBar: StatusBar) { }
 
   ngOnInit() {
-    this.items = this.cartService.getProducts();
-    this.cart = this.cartService.getCart();
+      this.statusBar.styleDefault();
+      // let status bar overlay webview
+      this.statusBar.overlaysWebView(true);
+      // set status bar to white
+      this.statusBar.backgroundColorByHexString('#ffffff');
+      this.items = this.cartService.getProducts();
+      this.cart = this.cartService.getCart();
   }
 
   addToCart(product) {

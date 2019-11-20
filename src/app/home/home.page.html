@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Shopping
+      Ionic Shoppy
     </ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="openCart()">
-        <ion-badge *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+        <ion-badge slot="start" *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
         <ion-icon slot="icon-only" name="cart"></ion-icon>
       </ion-button>
     </ion-buttons>

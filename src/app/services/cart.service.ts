@@ -1,50 +1,50 @@
 import { Injectable } from '@angular/core';
- 
+
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
- 
+
   private data = [
     {
-      category: 'Pizza',
+      category: 'Shoes',
       expanded: true,
       products: [
-        { id: 0, name: 'Salami', price: '8' },
-        { id: 1, name: 'Classic', price: '5' },
-        { id: 2, name: 'Tuna', price: '9' },
-        { id: 3, name: 'Hawai', price: '7' }
+        { id: 0, name: 'Nike', price: '199' },
+        { id: 1, name: 'Addidas', price: '149' },
+        { id: 2, name: 'Balenciaga', price: '179' },
+        { id: 3, name: 'Jordans', price: '499' }
       ]
     },
     {
-      category: 'Pasta',
+      category: 'Pants',
       products: [
-        { id: 4, name: 'Mac & Cheese', price: '8' },
-        { id: 5, name: 'Bolognese', price: '6' }
+        { id: 4, name: 'Men', price: '1499' },
+        { id: 5, name: 'Women', price: '999' }
       ]
     },
     {
-      category: 'Salad',
+      category: 'Shirts and T-shirts',
       products: [
-        { id: 6, name: 'Ham & Egg', price: '8' },
-        { id: 7, name: 'Basic', price: '5' },
-        { id: 8, name: 'Ceaser', price: '9' }
+        { id: 6, name: 'Black', price: '499' },
+        { id: 7, name: 'Violet', price: '999' },
+        { id: 8, name: 'Green', price: '349' }
       ]
     }
   ];
- 
+
   private cart = [];
- 
+
   constructor() { }
- 
+
   getProducts() {
     return this.data;
   }
- 
+
   getCart() {
     return this.cart;
   }
- 
+
   addProduct(product) {
     this.cart.push(product);
   }
